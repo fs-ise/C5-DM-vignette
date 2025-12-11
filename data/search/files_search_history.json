@@ -1,0 +1,17 @@
+{
+    "search_string": "",
+    "platform": "colrev.files_dir",
+    "authors": [],
+    "record_info": {},
+    "date": {},
+    "search_results_path": "data/search/files.bib",
+    "search_type": "FILES",
+    "field": "",
+    "version": "0.1.0",
+    "search_parameters": {
+        "scope": {
+            "path": "data/pdfs"
+        }
+    },
+    "comment": ""
+}

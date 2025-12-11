@@ -1,0 +1,15 @@
+{
+    "search_string": "",
+    "platform": "colrev.crossref",
+    "authors": [],
+    "record_info": {},
+    "date": {},
+    "search_results_path": "data/search/crossref.bib",
+    "search_type": "API",
+    "field": "",
+    "version": "0.1.0",
+    "comment": "",
+    "search_parameters": {
+        "url": "https://api.crossref.org/works?query.bibliographic=microsourcing"
+    }
+}

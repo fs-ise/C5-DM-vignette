@@ -148,7 +148,18 @@
     },
     "screen": {
         "explanation": null,
-        "criteria": {},
+        "criteria": {
+            "non-empirical": {
+                "explanation": "Exclude non-empirical work",
+                "comment": "",
+                "criterion_type": "exclusion_criterion"
+            },
+            "biases": {
+                "explanation": "Include research studying biases in microsourcing",
+                "comment": "",
+                "criterion_type": "inclusion_criterion"
+            }
+        },
         "screen_package_endpoints": [
             {
                 "endpoint": "colrev.colrev_cli_screen"

@@ -263,15 +263,72 @@ Table&nbsp;1: Overview of search strategies and results.
 </section>
 <section id="dedupe" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="dedupe">Dedupe</h2>
-<p>Metadata was prepared using CoLRev and extensions <span class="citation" data-cites="WagnerPrester2025">(<a href="#ref-WagnerPrester2025" role="doc-biblioref">Wagner and Prester 2025</a>)</span>. Preparation changes are in the <a href="https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+prep&amp;type=commits" target="_blank">prep commits</a>. <!-- or link to individual commit? https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c --> Deduplication was done using BibDedupe <span class="citation" data-cites="Wagner2024">(<a href="#ref-Wagner2024" role="doc-biblioref">Wagner 2024</a>)</span>. Deduplication changes are in the <a href="https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+dedupe&amp;type=commits" target="_blank">dedupe commits</a>. <!-- or link to individual commit? https://github.com/fs-ise/C5-DM-vignette/commit/c22178d10fb90954d681f428fc5b08c72b5e6d48 --></p>
+<p>Metadata was prepared using CoLRev and extensions <span class="citation" data-cites="WagnerPrester2025">(<a href="#ref-WagnerPrester2025" role="doc-biblioref">Wagner and Prester 2025</a>)</span>. <!--
+Preparation changes are in the [prep commits](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+prep&type=commits){target=_blank}.
+ or link to individual commit? https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c --></p>
 
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a class="pill" target="_blank" href="collect-prepare.html"> ⧉ Prepare (meta)data (Collect). </a></p>
+</div></div><div class="callout callout-style-default callout-note callout-titled" title="Manually supervised task — Import and prepare metadata">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Manually supervised task — Import and prepare metadata
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Trigger:</strong> Records with <code>colrev_status = {md_retrieved}</code> in <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib">data/records.bib</a><br>
+<strong>Responsible:</strong> Review coordinator</p>
+<p><strong>Commands:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Load: convert raw inputs to BibTeX entries in data/records.bib</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">colrev</span> load</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Prep: automated normalization/enrichment (may advance most records)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">colrev</span> prep</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) Prep-man: resolve remaining flags manually</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">colrev</span> prep-man</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output (in <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib">data/records.bib</a>):</strong></p>
+<ul>
+<li>Records are converted to BibTeX and advance from <code>md_retrieved</code> → <code>md_imported</code> → <code>md_prepared</code>.</li>
+<li>Records that cannot be prepared automatically are flagged as <code>md_needs_manual_preparation</code> and must be resolved before they are set to <code>md_prepared</code>.</li>
+</ul>
+<p><strong>Validation:</strong> Run <code>colrev validate</code> after committing changes.<br>
+<strong>History filters:</strong> <a href="https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+load&amp;type=commits">load</a> · <a href="https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+prep&amp;type=commits">prep</a> · <a href="https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+prep-man&amp;type=commits">prep-man</a></p>
+</div>
+</div>
+</div>
+<p>Deduplication was done using BibDedupe <span class="citation" data-cites="Wagner2024">(<a href="#ref-Wagner2024" role="doc-biblioref">Wagner 2024</a>)</span>. <!--
+Deduplication changes are in the [dedupe commits](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+dedupe&type=commits){target=_blank}.
+or link to individual commit? https://github.com/fs-ise/C5-DM-vignette/commit/c22178d10fb90954d681f428fc5b08c72b5e6d48 --></p>
+<div class="callout callout-style-default callout-note callout-titled" title="Manually supervised task — Deduplicate">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Manually supervised task — Deduplicate
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Trigger:</strong> Records in <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib">data/records.bib</a> are in <code>colrev_status = {md_prepared}</code><br>
+<strong>Responsible:</strong> Review coordinator<br>
+<strong>Command:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">colrev</span> dedupe</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output (in <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib">data/records.bib</a>):</strong> Duplicates resolved and records set to <code>md_processed</code> (ready for prescreen)<br>
+<strong>Validation:</strong> Run <code>colrev validate</code> after committing<br>
+<strong>History filter:</strong> <a href="https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+dedupe&amp;type=commits">dedupe</a></p>
+</div>
+</div>
 <!--
 Dedupe changes were validated using the max-diff strategy (`colrev validate XXXX`).
 Preparation changes were validated using the max-diff strategy (`colrev validate XXXX`).
 -->
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p><a class="pill" target="_blank" href="collect-prepare.html"> ⧉ Prepare (meta)data (Collect). </a></p>
-</div></div></section>
+</section>
 <section id="prescreen" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="prescreen">Prescreen</h2>
 <p>For prescreening, we tested the new <a href="temp_file.txt" target="_blank">llm-prescreener</a>. Comparison with prescreening decisions of GW showed low reliability with the llm-prescreener. Results were therefore reverted and a fully manual prescreen was implemented.</p>
@@ -284,45 +341,109 @@ TODO:
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p><a class="pill" target="_blank" href="control-evaluate-changes.html"> ⧉ Evaluate changes (Control). </a></p>
-</div></div><div class="callout callout-style-default callout-note callout-titled" title="Manual task">
+</div></div><div class="callout callout-style-default callout-note callout-titled" title="Manually supervised task — Prescreen records">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Manual task
+<span class="screen-reader-only">Note</span>Manually supervised task — Prescreen records
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Trigger:</strong> <code>records_deduped.bib</code> updated<br>
+<p><strong>Trigger:</strong> <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib">data/records.bib</a> updated<br>
 <strong>Responsible:</strong> Two independent coders (GW and JP)<br>
 <strong>Protocol:</strong> screening procedures and criteria (see <code>protocol/screening.md</code>)<br>
-<strong>Expected output:</strong> <code>records_screened.bib</code><br>
+<strong>Output:</strong> <code>records_screened.bib</code><br>
 <strong>History filter:</strong> <a href="https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+prescreen&amp;type=commits&amp;p=1">prescreen</a></p>
 </div>
 </div>
 
-<!-- Screen: fulltext documents were shared in a protected drive (link to Dropbox) -->
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p><a class="pill" target="_blank" href="consume-avoid-ineffective-automation.html"> ⧉ Avoid ineffective automation (Consume). </a></p>
-</div></div></section>
+</div></div><p>For full-text screening, PDF documents were retrieved and prepared.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Manually supervised task — Retrieve and prepare full texts">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Manually supervised task — Retrieve and prepare full texts
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Trigger:</strong> Records in <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib">data/records.bib</a> with <code>colrev_status = {rev_prescreen_included}</code><br>
+<strong>Responsible:</strong> Review coordinator (pdf-get/pdf-prep) and individual reviewer (pdf-get-man/pdf-prep-man)</p>
+<p><strong>Commands:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) pdf-get: automated retrieval and linking of PDFs</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">colrev</span> pdf-get</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) pdf-get-man: manual retrieval for remaining missing PDFs</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">colrev</span> pdf-get-man</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) pdf-prep: automated PDF preparation (OCR/text extraction/checks)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">colrev</span> pdf-prep</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 4) pdf-prep-man: manual fixes for remaining problematic PDFs</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">colrev</span> pdf-prep-man</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output (in <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib">data/records.bib</a>):</strong> - After retrieval, records are updated with <code>file = {data/pdfs/&lt;...&gt;.pdf}</code> and advanced to <code>colrev_status = {pdf_imported}</code>. - After preparation, records are advanced to <code>colrev_status = {pdf_prepared}</code>. - Failures are flagged as <code>pdf_needs_manual_preparation</code> and must be resolved via <code>colrev pdf-prep-man</code> before they can reach <code>pdf_prepared</code>.</p>
+<p><strong>Notes:</strong> PDF retrieval depends on institutional access, licensing constraints, and rate limits.<br>
+<strong>History filters:</strong> <a href="https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+pdf-get&amp;type=commits">pdf-get</a> · <a href="https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+pdf-get-man&amp;type=commits">pdf-get-man</a> · <a href="https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+pdf-prep&amp;type=commits">pdf-prep</a> · <a href="https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+pdf-prep-man&amp;type=commits">pdf-prep-man</a></p>
+</div>
+</div>
+</div>
+<p>Records were screened independently, as described in the following.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Manual task — Screen full texts">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Manual task — Screen full texts
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Trigger:</strong> Records in <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib">data/records.bib</a> with <code>colrev_status = {pdf_prepared}</code><br>
+<strong>Responsible:</strong> Two independent coders (GW and JP)<br>
+<strong>Protocol:</strong> full-text screening procedures and criteria (see <code>protocol/fulltext_screening.md</code>)</p>
+<p><strong>Process:</strong></p>
+<ul>
+<li>Each coder screens the full text independently and records an inclusion/exclusion decision.</li>
+<li>Disagreements are resolved through discussion (or third-coder arbitration, if needed).</li>
+<li>Decisions and reasons are logged in the record fields (e.g., <code>screening_criteria</code>, <code>screening_decision</code>, <code>screening_reason</code>) according to the protocol.</li>
+</ul>
+<p><strong>Output (in <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib">data/records.bib</a>):</strong></p>
+<ul>
+<li>Included full texts: <code>colrev_status = {rev_screen_included}</code></li>
+<li>Excluded full texts: <code>colrev_status = {rev_screen_excluded}</code> (with documented exclusion reason)</li>
+</ul>
+<p><strong>History filter:</strong> <a href="https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+screen&amp;type=commits">screen</a></p>
+</div>
+</div>
+</div>
+<!-- Screen: fulltext documents were shared in a protected drive (link to Dropbox) -->
+</section>
 <section id="data-extraction" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="data-extraction">Data extraction</h2>
 <p>In line with the methodology of systematic reviews <span class="citation" data-cites="HigginsGreen2008 SmithEtAl2011">(<a href="#ref-HigginsGreen2008" role="doc-biblioref">Higgins and Green 2008</a>; <a href="#ref-SmithEtAl2011" role="doc-biblioref">Smith et al. 2011</a>)</span>, we selected structured data forms to extract evidence from the studies.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Manual task">
+<div class="callout callout-style-default callout-note callout-titled" title="Manual task — Extract evidence">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Manual task
+<span class="screen-reader-only">Note</span>Manual task — Extract evidence
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Trigger:</strong> <code>records_deduped.bib</code> updated<br>
+<p><strong>Trigger:</strong> <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib">data/records.bib</a> updated<br>
 <strong>Responsible:</strong> Two independent coders (GW and JP)<br>
 <strong>Protocol:</strong> data extraction form and protocol (see <code>protocol/data_extraction.md</code>)<br>
-<strong>Expected output:</strong> <code>extracted_evidence.yaml</code><br>
+<strong>Output:</strong> <code>extracted_evidence.yaml</code><br>
 <strong>History filter:</strong> <a href="https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+data&amp;type=commits&amp;p=1">data</a></p>
 </div>
 </div>
@@ -351,44 +472,44 @@ Figure&nbsp;1: PRISMA Flow Chart (generated by <a href="https://github.com/CoLRe
 <div class="cell" data-message="false" data-execution_count="3">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yaml</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>yaml_path <span class="op">=</span> Path(<span class="st">"data/evidence_platform_work_biases.yml"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> yaml_path.<span class="bu">open</span>(<span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> f:</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    doc <span class="op">=</span> yaml.safe_load(f)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(doc.get(<span class="st">"papers"</span>, []))</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"study_id"</span>, <span class="st">"citation_key"</span>, <span class="st">"year"</span>, <span class="st">"platform"</span>, <span class="st">"platform_type"</span>,</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"method"</span>, <span class="st">"data"</span>, <span class="st">"sample"</span>,</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"bias_type"</span>, <span class="st">"bias_mechanism"</span>,</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"outcome_affected"</span>, <span class="st">"evidence_level"</span>, <span class="st">"direction_of_bias"</span>,</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"key_result"</span>, <span class="st">"notes"</span>,</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[[c <span class="cf">for</span> c <span class="kw">in</span> cols <span class="cf">if</span> c <span class="kw">in</span> df.columns]]</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"year"</span>] <span class="op">=</span> pd.to_numeric(df.get(<span class="st">"year"</span>), errors<span class="op">=</span><span class="st">"coerce"</span>).astype(<span class="st">"Int64"</span>)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.sort_values([<span class="st">"bias_type"</span>, <span class="st">"evidence_level"</span>, <span class="st">"year"</span>], na_position<span class="op">=</span><span class="st">"last"</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>compact_cols <span class="op">=</span> [</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">"citation_key"</span>, <span class="st">"platform_type"</span>, <span class="st">"bias_type"</span>,</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"outcome_affected"</span>, <span class="st">"key_result"</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>df_compact <span class="op">=</span> df[compact_cols].rename(columns<span class="op">=</span>{<span class="st">"citation_key"</span>: <span class="st">"study"</span>})</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>df_compact</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yaml</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>yaml_path <span class="op">=</span> Path(<span class="st">"data/evidence_platform_work_biases.yml"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> yaml_path.<span class="bu">open</span>(<span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> f:</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    doc <span class="op">=</span> yaml.safe_load(f)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(doc.get(<span class="st">"papers"</span>, []))</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"study_id"</span>, <span class="st">"citation_key"</span>, <span class="st">"year"</span>, <span class="st">"platform"</span>, <span class="st">"platform_type"</span>,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"method"</span>, <span class="st">"data"</span>, <span class="st">"sample"</span>,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"bias_type"</span>, <span class="st">"bias_mechanism"</span>,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"outcome_affected"</span>, <span class="st">"evidence_level"</span>, <span class="st">"direction_of_bias"</span>,</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"key_result"</span>, <span class="st">"notes"</span>,</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[[c <span class="cf">for</span> c <span class="kw">in</span> cols <span class="cf">if</span> c <span class="kw">in</span> df.columns]]</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"year"</span>] <span class="op">=</span> pd.to_numeric(df.get(<span class="st">"year"</span>), errors<span class="op">=</span><span class="st">"coerce"</span>).astype(<span class="st">"Int64"</span>)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.sort_values([<span class="st">"bias_type"</span>, <span class="st">"evidence_level"</span>, <span class="st">"year"</span>], na_position<span class="op">=</span><span class="st">"last"</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>compact_cols <span class="op">=</span> [</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">"citation_key"</span>, <span class="st">"platform_type"</span>, <span class="st">"bias_type"</span>,</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"outcome_affected"</span>, <span class="st">"key_result"</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>df_compact <span class="op">=</span> df[compact_cols].rename(columns<span class="op">=</span>{<span class="st">"citation_key"</span>: <span class="st">"study"</span>})</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>df_compact</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div id="tbl-evidence" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="3" data-message="false">
+<div id="tbl-evidence" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-message="false" data-execution_count="3">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-evidence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2: Table of evidence (generated from <a href="https://github.com/fs-ise/C5-DM-vignette-temp/blob/main/data/extracted-evidence.yaml">extracted-evidence.yaml</a>)
 </figcaption>
 <div aria-describedby="tbl-evidence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="46">
+<div class="cell-output cell-output-display" data-execution_count="31">
 <div>
 
 
@@ -490,7 +611,7 @@ plt.show()
 :::
 
 
-:::{#24e6855c .cell .markdown}
+:::{#2eff4dd3 .cell .markdown}
 -->
 </section>
 <section id="data-availability" class="level2 page-columns page-full">

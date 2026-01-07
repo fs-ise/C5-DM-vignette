@@ -250,9 +250,10 @@ colrev pdf-prep-man
 ```
 
 **Output (in [data/records.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib)):**
+
 - After retrieval, records are updated with `file = {data/pdfs/<...>.pdf}` and advanced to `colrev_status = {pdf_imported}`.
 - After preparation, records are advanced to `colrev_status = {pdf_prepared}`.
-- Failures are flagged as `pdf_needs_manual_preparation` and must be resolved via `colrev pdf-prep-man` before they can reach `pdf_prepared`.
+- Failures are flagged as `pdf_needs_manual_preparation` and must be resolved via `colrev pdf-prep-man` before they are set to `pdf_prepared`.
 
 **Notes:** PDF retrieval depends on institutional access, licensing constraints, and rate limits.  
 **History filters:** [pdf-get](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+pdf-get&type=commits) · [pdf-get-man](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+pdf-get-man&type=commits) · [pdf-prep](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+pdf-prep&type=commits) · [pdf-prep-man](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+pdf-prep-man&type=commits)

@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="G. Wagner, J. Prester, R. Lukyanenko, G. Paré">
+
+<title>Online labor markets and worker selection: A systematic review (vignette)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3eb01a01a635a2b605c08606a7fa965c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles.css">
+<meta name="citation_title" content="Online labor markets and worker selection: A systematic review (vignette)">
+<meta name="citation_author" content="G. Wagner, J. Prester, R. Lukyanenko, G. Paré">
+<meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=A suggested data structure for transparent and repeatable reporting of bibliographic searching;,citation_author=Neal R. Haddaway;,citation_author=Melissa L. Rethlefsen;,citation_author=Melinda Davies;,citation_author=Julie Glanville;,citation_author=Bethany McGowan;,citation_author=Kate Nyhan;,citation_author=Sarah Young;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=4;,citation_doi=10.1002/CL2.1288;,citation_volume=18;,citation_journal_title=Campbell Systematic Reviews;">
+<meta name="citation_reference" content="citation_title=Exploring the boundaries and processes of digital platforms for knowledge work: A review of information systems research;,citation_author=Gerit Wagner;,citation_author=Julian Prester;,citation_author=Guy Paré;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_issue=4;,citation_doi=10.1016/j.jsis.2021.101694;,citation_volume=30;,citation_journal_title=The Journal of Strategic Information Systems;">
+<meta name="citation_reference" content="citation_title=Inequality and discrimination in the online labor market: A scoping review;,citation_author=Fien Fiers;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=12;,citation_doi=10.1177/14614448221128379;,citation_volume=25;,citation_journal_title=New Media &amp;amp;amp; Society;">
+<meta name="citation_reference" content="citation_title=The PRISMA 2020 statement: An updated guideline for reporting systematic reviews;,citation_author=Matthew J. Page;,citation_author=Joanne E. McKenzie;,citation_author=Patrick M. Bossuyt;,citation_author=Isabelle Boutron;,citation_author=Tammy C. Hoffmann;,citation_author=Cynthia D. Mulrow;,citation_author=Larissa Shamseer;,citation_author=Jennifer M. Tetzlaff;,citation_author=Elie A. Akl;,citation_author=Sue E. Brennan;,citation_author=Roger Chou;,citation_author=Julie Glanville;,citation_author=Jeremy M. Grimshaw;,citation_author=Asbjørn Hróbjartsson;,citation_author=Manoj M. Lalu;,citation_author=Tianjing Li;,citation_author=Elizabeth W. Loder;,citation_author=Evan Mayo-Wilson;,citation_author=Steve McDonald;,citation_author=Luke A. McGuinness;,citation_author=Lesley A. Stewart;,citation_author=James Thomas;,citation_author=Andrea C. Tricco;,citation_author=Vivian A. Welch;,citation_author=Penny Whiting;,citation_author=David Moher;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_fulltext_html_url=https://systematicreviewsjournal.biomedcentral.com/articles/10.1186/s13643-021-01626-4;,citation_issue=1;,citation_doi=10.1186/S13643-021-01626-4;,citation_volume=10;,citation_journal_title=Systematic Reviews;">
+<meta name="citation_reference" content="citation_title=BibDedupe: An open-source python library for bibliographic record deduplication;,citation_abstract=BibDedupe is a Python library developed for bibliographic record deduplication in meta-analysis and research synthesis. It is constructed with a focus on four requirements: (1) Zero false positives: The primary objective is to prevent incorrectly merging distinct entries. This focus on zero false positives is crucial to ensure trustworthiness and prevent biased conclusions in the analysis. (2) Reproducibility: BibDedupe implements fixed rules to produce consistent results, in line with the scientific standard of reproducibility. (3) Efficiency: The library is also tuned for low false-negative rates and rapid processing, to ensure scalability of the duplicate identification process. (4) Continuous evaluation and improvement: It is continuously evaluated on over 160,000 records from 10 datasets to ensure its effectiveness, especially in follow-up refinements. Unlike general-purpose deduplication tools, BibDedupe is specifically designed for the unique requirements of bibliographic data in meta-analysis and research synthesis. In this context, BibDedupe aims to provide a Python library that improves the effectiveness and efficiency of duplicate identification, potentially benefitting review papers across scientific disciplines.;,citation_author=Gerit Wagner;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://joss.theoj.org/papers/10.21105/joss.06318;,citation_issue=97;,citation_doi=10.21105/JOSS.06318;,citation_volume=9;,citation_journal_title=Journal of Open Source Software;">
+<meta name="citation_reference" content="citation_title=CoLRev: An open-source environment for collaborative reviews;,citation_author=Gerit Wagner;,citation_author=Julian Prester;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_fulltext_html_url=https://github.com/CoLRev-Environment/colrev;">
+<meta name="citation_reference" content="citation_title=Programming for qualitative data analysis: Towards a YAML workflow;,citation_author=Blair Wang;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_conference_title=Australasian conference on information systems;">
+<meta name="citation_reference" content="citation_title=Seeking qualitative rigor in inductive research: Notes on the gioia methodology;,citation_author=Dennis A Gioia;,citation_author=Kevin G Corley;,citation_author=Aimee L Hamilton;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_issue=1;,citation_volume=16;,citation_journal_title=Organizational research methods;,citation_publisher=Sage Publications Sage CA: Los Angeles, CA;">
+<meta name="citation_reference" content="citation_title=Data management in literature reviews: The C5-DM framework;,citation_author=Gerit Wagner;,citation_author=Julian Prester;,citation_author=Roman Lukyanenko;,citation_author=Guy Paré;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_journal_title=Research Synthesis Methods (under review);">
+<meta name="citation_reference" content="citation_title=Methodology in conducting a systematic review of systematic reviews of healthcare interventions;,citation_author=Valerie Smith;,citation_author=Declan Devane;,citation_author=Cecily M Begley;,citation_author=Mike Clarke;,citation_publication_date=2011;,citation_cover_date=2011;,citation_year=2011;,citation_issue=1;,citation_doi=10.1186/1471-2288-11-15;,citation_volume=11;,citation_journal_title=BMC medical research methodology;">
+<meta name="citation_reference" content="citation_title=Cochrane handbook for systematic reviews of interventions: Cochrane book series;,citation_author=Julian PT Higgins;,citation_author=Sally Green;,citation_publication_date=2008;,citation_cover_date=2008;,citation_year=2008;">
+<meta name="citation_reference" content="citation_title=Generative artificial intelligence use in evidence synthesis: A systematic review;,citation_author=Justin Clark;,citation_author=Belinda Barton;,citation_author=Loai Albarqouni;,citation_author=Oyungerel Byambasuren;,citation_author=Tanisha Jowsey;,citation_author=Justin Keogh;,citation_author=Tian Liang;,citation_author=Christian Moro;,citation_author=Hayley O’Neill;,citation_author=Mark Jones;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_issue=4;,citation_doi=doi.org/10.1017/rsm.2025.16 ;,citation_volume=16;,citation_journal_title=Research Synthesis Methods;">
+</head>
+
+<body class="quarto-light">
+
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Online labor markets and worker selection: A systematic review (vignette)</h1>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+        
+        <div class="quarto-title-meta">
+
+                <div>
+            <div class="quarto-title-meta-heading">Author</div>
+            <div class="quarto-title-meta-contents">
+                        <p>G. Wagner, J. Prester, R. Lukyanenko, G. Paré </p>
+                      </div>
+          </div>
+                
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      </div>
+    </div>
+
+
+
+    <div class="quarto-other-links-text-target">
+    </div>  </div>
+</header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#plan" id="toc-plan" class="nav-link active" data-scroll-target="#plan">Plan</a></li>
+  <li><a href="#search" id="toc-search" class="nav-link" data-scroll-target="#search">Search</a></li>
+  <li><a href="#dedupe" id="toc-dedupe" class="nav-link" data-scroll-target="#dedupe">Dedupe</a></li>
+  <li><a href="#prescreen" id="toc-prescreen" class="nav-link" data-scroll-target="#prescreen">Prescreen</a></li>
+  <li><a href="#data-extraction" id="toc-data-extraction" class="nav-link" data-scroll-target="#data-extraction">Data extraction</a></li>
+  <li><a href="#synthesis" id="toc-synthesis" class="nav-link" data-scroll-target="#synthesis">Synthesis</a></li>
+  <li><a href="#data-availability" id="toc-data-availability" class="nav-link" data-scroll-target="#data-availability">Data availability</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="index-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li></ul></div></nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+
+
+
+  
+
+
+<p>Building on the C5-DM framework for data management in literature reviews <span class="citation" data-cites="WagnerEtAl2026">(<a href="#ref-WagnerEtAl2026" role="doc-biblioref">Wagner et al. 2026</a>)</span>, this vignette illustrates how data management principles can be implemented in an literature review. The framework foregrounds data conceptualization, collection, curation, control, and consumption as foundational activities that shape the transparency, reliability, and reuse of literature review outcomes. The vignette is organized into two complementary parts. The middle column presents a systematic literature review following established reporting conventions. The right column explains how the manuscript is internally grounded in explicit data management decisions aligned with the C5-DM framework, adding an interactive layer of annotations that makes these decisions visible. The vignette thus serves as a concrete illustration of good data management practice in literature reviews—one that readers can follow directly in their own work while also sharpening their understanding of what to look for when evaluating other software solutions and data management approaches.</p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<div class="callout callout-style-default callout-note callout-titled" title="5C-DM Framework">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>5C-DM Framework
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This column explains how the data management prinicples are implemented. ⬇️</p>
+<!-- Click on the buttons for an explanation. -->
+</div>
+</div>
+</div></div><section id="plan" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="plan">Plan</h2>
+<p>This review focuses on worker selection decisions in online labor markets. In line with qualitative systematic reviews <span class="citation" data-cites="HigginsGreen2008 SmithEtAl2011">(<a href="#ref-HigginsGreen2008" role="doc-biblioref">Higgins and Green 2008</a>; <a href="#ref-SmithEtAl2011" role="doc-biblioref">Smith et al. 2011</a>)</span>, it aims at collecting evidence from prior empirical studies and aggregating it.</p>
+<p>The review is conducted using a <a href="https://github.com/fs-ise/C5-DM-vignette" target="_blank">shared GitHub repository</a>, which was be synchronized locally by the team.</p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a class="pill" target="_blank" href="curate-version-control.html"> ⧉ Version-control data (Curate). </a></p>
+</div></div></section>
+<section id="search" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="search">Search</h2>
+<p>We specified search strategies for the Crossref and DBLP application programming interfaces (APIs)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> using the core keyword <em>microsourcing</em> and a set of semantically related synonyms. We also reused samples from prior reviews <span class="citation" data-cites="WagnerPresterPare2021 Fiers2023">(<a href="#ref-WagnerPresterPare2021" role="doc-biblioref">Wagner, Prester, and Paré 2021</a>; <a href="#ref-Fiers2023" role="doc-biblioref">Fiers 2023</a>)</span>. The resulting query formulations were systematically tabulated to document the conceptual scope of the search and to enable consistent execution across data sources (see <a href="#tbl-search-overview" class="quarto-xref">Table&nbsp;1</a>).</p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a class="pill" target="_blank" href="control-standard-formats.html"> ⧉ Use standard file formats (Control). </a></p>
+</div><div class="margin-aside">
+<p><a class="pill" target="_blank" href="conceptualize-raw-primary.html"> ⧉ Link raw and primary records (Conceptualize). </a></p>
+</div><div class="margin-aside">
+<p><a class="pill" target="_blank" href="consume-reuse-prior-review.html"> ⧉ Reuse prior review data (Consume). </a></p>
+</div></div>
+
+<div id="tbl-search-overview" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-search-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Overview of search strategies and results.
+</figcaption>
+<div aria-describedby="tbl-search-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Source</th>
+<th style="text-align: left;">Search strategy</th>
+<th style="text-align: left;">Search results</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Prior review: <span class="citation" data-cites="Fiers2023">Fiers (<a href="#ref-Fiers2023" role="doc-biblioref">2023</a>)</span></td>
+<td style="text-align: left;"><a href="data/search/Fiers2023_search_history.json">Fiers2023_search_history.json</a></td>
+<td style="text-align: left;"><a href="data/search/Fiers2023.csv">Fiers2023.csv</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Prior review: <span class="citation" data-cites="WagnerPresterPare2021">Wagner, Prester, and Paré (<a href="#ref-WagnerPresterPare2021" role="doc-biblioref">2021</a>)</span></td>
+<td style="text-align: left;"><a href="data/search/WagnerPresterPare2021_search_history.json">WagnerPresterPare2021_search_history.json</a></td>
+<td style="text-align: left;"><a href="data/search/WagnerPresterPare2021.bib">WagnerPresterPare2021.bib</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Crossref (API search)</td>
+<td style="text-align: left;"><a href="data/search/crossref_search_history.json">crossref_search_history.json</a></td>
+<td style="text-align: left;"><a href="data/search/crossref.bib">crossref.bib</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DBLP (API search)</td>
+<td style="text-align: left;"><a href="data/search/dblp_search_history.json">dblp_search_history.json</a></td>
+<td style="text-align: left;"><a href="data/search/dblp.bib">dblp.bib</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The search strategies are stored in JSON format together with the raw data files in the <a href="https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search" target="_blank">data/search</a> directory, in line with the standard of <span class="citation" data-cites="HaddawayRethlefsenDaviesEtAl2022">Haddaway et al. (<a href="#ref-HaddawayRethlefsenDaviesEtAl2022" role="doc-biblioref">2022</a>)</span>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a class="pill" target="_blank" href="collect-search-strategy-design.html"> ⧉ Design effective search strategies (Collect). </a></p>
+</div><div class="margin-aside">
+<p><a class="pill" target="_blank" href="collect-transparency-coverage.html"> ⧉ Report database coverage (Collect). </a></p>
+</div></div>
+</section>
+<section id="dedupe" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="dedupe">Dedupe</h2>
+<p>Metadata was prepared using CoLRev and extensions <span class="citation" data-cites="WagnerPrester2025">(<a href="#ref-WagnerPrester2025" role="doc-biblioref">Wagner and Prester 2025</a>)</span>. Preparation changes are in the <a href="https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+prep&amp;type=commits" target="_blank">prep commits</a>. <!-- or link to individual commit? https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c --> Deduplication was done using BibDedupe <span class="citation" data-cites="Wagner2024">(<a href="#ref-Wagner2024" role="doc-biblioref">Wagner 2024</a>)</span>. Deduplication changes are in the <a href="https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+dedupe&amp;type=commits" target="_blank">dedupe commits</a>. <!-- or link to individual commit? https://github.com/fs-ise/C5-DM-vignette/commit/c22178d10fb90954d681f428fc5b08c72b5e6d48 --></p>
+
+<!--
+Dedupe changes were validated using the max-diff strategy (`colrev validate XXXX`).
+Preparation changes were validated using the max-diff strategy (`colrev validate XXXX`).
+-->
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a class="pill" target="_blank" href="collect-prepare.html"> ⧉ Prepare (meta)data (Collect). </a></p>
+</div></div></section>
+<section id="prescreen" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="prescreen">Prescreen</h2>
+<p>For prescreening, we tested the new <a href="temp_file.txt" target="_blank">llm-prescreener</a>. Comparison with prescreening decisions of GW showed low reliability with the llm-prescreener. Results were therefore reverted and a fully manual prescreen was implemented.</p>
+<!--
+TODO:
+- tested...  in [ref](temp_file.txt){target=_blank}
+- (command + kappa)
+- results were reverted: ([ref](temp_file.txt))
+- This could also be done in a separate branch, or the changes could be undone using a hard git reset. -->
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a class="pill" target="_blank" href="control-evaluate-changes.html"> ⧉ Evaluate changes (Control). </a></p>
+</div></div><div class="callout callout-style-default callout-note callout-titled" title="Manual task">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Manual task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Trigger:</strong> <code>records_deduped.bib</code> updated<br>
+<strong>Responsible:</strong> Two independent coders (GW and JP)<br>
+<strong>Protocol:</strong> screening procedures and criteria (see <code>protocol/screening.md</code>)<br>
+<strong>Expected output:</strong> <code>records_screened.bib</code><br>
+<strong>History filter:</strong> <a href="https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+prescreen&amp;type=commits&amp;p=1">prescreen</a></p>
+</div>
+</div>
+
+<!-- Screen: fulltext documents were shared in a protected drive (link to Dropbox) -->
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a class="pill" target="_blank" href="consume-avoid-ineffective-automation.html"> ⧉ Avoid ineffective automation (Consume). </a></p>
+</div></div></section>
+<section id="data-extraction" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="data-extraction">Data extraction</h2>
+<p>In line with the methodology of systematic reviews <span class="citation" data-cites="HigginsGreen2008 SmithEtAl2011">(<a href="#ref-HigginsGreen2008" role="doc-biblioref">Higgins and Green 2008</a>; <a href="#ref-SmithEtAl2011" role="doc-biblioref">Smith et al. 2011</a>)</span>, we selected structured data forms to extract evidence from the studies.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Manual task">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Manual task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Trigger:</strong> <code>records_deduped.bib</code> updated<br>
+<strong>Responsible:</strong> Two independent coders (GW and JP)<br>
+<strong>Protocol:</strong> data extraction form and protocol (see <code>protocol/data_extraction.md</code>)<br>
+<strong>Expected output:</strong> <code>extracted_evidence.yaml</code><br>
+<strong>History filter:</strong> <a href="https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+data&amp;type=commits&amp;p=1">data</a></p>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a class="pill" target="_blank" href="curate-align-data-with-methods.html"> ⧉ Align data with methods (Curate). </a></p>
+</div></div></section>
+<section id="synthesis" class="level2">
+<h2 class="anchored" data-anchor-id="synthesis">Synthesis</h2>
+<p>The narrative synthesis is in the <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/data/paper.md" target="_blank">paper document</a> in Markdown format, allowing for larger teams to work on the same document (similar to the <a href="https://github.com/greenelab/covid19-review">covid19-review</a>). The current status of the project is automatically updated with every change and reflected in the PRISMA chart (<a href="#fig-prisma" class="quarto-xref">Figure&nbsp;1</a>, in line with the recommendations of <span class="citation" data-cites="PageMcKenzieBossuytEtAl2021">Page et al. (<a href="#ref-PageMcKenzieBossuytEtAl2021" role="doc-biblioref">2021</a>)</span>).</p>
+<div id="cell-fig-prisma" class="cell" data-fig-height="6" data-fig-width="10" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div id="fig-prisma" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-prisma-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/fig-prisma-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: PRISMA Flow Chart (generated by prisma-flow-diagram)"><img src="index_files/figure-html/fig-prisma-output-1.png" width="855" height="758" class="figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-prisma-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: PRISMA Flow Chart (generated by <a href="https://github.com/CoLRev-Environment/prisma-flow-diagram">prisma-flow-diagram</a>)
+</figcaption>
+</figure>
+</div>
+</div>
+<a class="quarto-notebook-link" id="nblink-1" href="index-preview.html#cell-fig-prisma">Source: Article Notebook</a></div>
+<p><a href="#tbl-evidence" class="quarto-xref">Table&nbsp;2</a> provides summary of extracted evidence.</p>
+<div class="cell" data-message="false" data-execution_count="3">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yaml</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>yaml_path <span class="op">=</span> Path(<span class="st">"data/evidence_platform_work_biases.yml"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> yaml_path.<span class="bu">open</span>(<span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> f:</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    doc <span class="op">=</span> yaml.safe_load(f)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(doc.get(<span class="st">"papers"</span>, []))</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"study_id"</span>, <span class="st">"citation_key"</span>, <span class="st">"year"</span>, <span class="st">"platform"</span>, <span class="st">"platform_type"</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"method"</span>, <span class="st">"data"</span>, <span class="st">"sample"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"bias_type"</span>, <span class="st">"bias_mechanism"</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"outcome_affected"</span>, <span class="st">"evidence_level"</span>, <span class="st">"direction_of_bias"</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"key_result"</span>, <span class="st">"notes"</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[[c <span class="cf">for</span> c <span class="kw">in</span> cols <span class="cf">if</span> c <span class="kw">in</span> df.columns]]</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"year"</span>] <span class="op">=</span> pd.to_numeric(df.get(<span class="st">"year"</span>), errors<span class="op">=</span><span class="st">"coerce"</span>).astype(<span class="st">"Int64"</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.sort_values([<span class="st">"bias_type"</span>, <span class="st">"evidence_level"</span>, <span class="st">"year"</span>], na_position<span class="op">=</span><span class="st">"last"</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>compact_cols <span class="op">=</span> [</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">"citation_key"</span>, <span class="st">"platform_type"</span>, <span class="st">"bias_type"</span>,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"outcome_affected"</span>, <span class="st">"key_result"</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>df_compact <span class="op">=</span> df[compact_cols].rename(columns<span class="op">=</span>{<span class="st">"citation_key"</span>: <span class="st">"study"</span>})</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>df_compact</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-evidence" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="3" data-message="false">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-evidence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Table of evidence (generated from <a href="https://github.com/fs-ise/C5-DM-vignette-temp/blob/main/data/extracted-evidence.yaml">extracted-evidence.yaml</a>)
+</figcaption>
+<div aria-describedby="tbl-evidence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="46">
+<div>
+
+
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">study</th>
+<th data-quarto-table-cell-role="th">platform_type</th>
+<th data-quarto-table-cell-role="th">bias_type</th>
+<th data-quarto-table-cell-role="th">outcome_affected</th>
+<th data-quarto-table-cell-role="th">key_result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>RosenblatEtAl2018</td>
+<td>ride_hailing</td>
+<td>algorithmic_visibility_bias</td>
+<td>task_access</td>
+<td>Algorithmic control mechanisms differentially ...</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>KuehlEtAl2022</td>
+<td>online_freelance</td>
+<td>experience_lock_in_bias</td>
+<td>matching_probability</td>
+<td>Early experience thresholds significantly redu...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>WoodEtAl2019</td>
+<td>online_labor</td>
+<td>geographic_bias</td>
+<td>wages</td>
+<td>Workers in low-income countries receive system...</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>HannakEtAl2017</td>
+<td>online_marketplaces</td>
+<td>rating_bias</td>
+<td>reputation_scores</td>
+<td>Online reputation systems encode demographic b...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>CookEtAl2018</td>
+<td>accommodation</td>
+<td>rating_bias</td>
+<td>booking_probability</td>
+<td>Hosts with African-American–sounding names rec...</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<!--
+
+@fig-aggregated-evidence aggregates the evidence.
+:::
+
+::: {#cell-fig-aggregated-evidence .cell message='false' execution_count=4}
+``` {.python .cell-code}
+weights = {
+    "weak": 1,
+    "moderate": 2,
+    "moderate_to_strong": 3,
+    "strong": 4
+}
+
+df_w = df.copy()
+df_w["evidence_weight"] = df_w["evidence_level"].map(weights).fillna(0)
+
+score = (
+    df_w.groupby("bias_type")["evidence_weight"]
+        .sum()
+        .sort_values(ascending=False)
+)
+
+ax = score.plot(kind="barh", figsize=(8, 3))
+ax.set_title("Weighted evidence score by bias type (higher = more/stronger evidence)")
+ax.set_xlabel("Bias type")
+ax.set_ylabel("Weighted score")
+plt.tight_layout()
+plt.show()
+```
+
+::: {.cell-output .cell-output-display}
+![Aggregated evidence (generated from [TODO](link))](index_files/figure-html/fig-aggregated-evidence-output-1.png){#fig-aggregated-evidence width=782 height=278}
+:::
+:::
+
+
+:::{#24e6855c .cell .markdown}
+-->
+</section>
+<section id="data-availability" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="data-availability">Data availability</h2>
+<p>To make the review reusable, the data was published on GitHub under the <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/LICENSE.txt">CC BY 4.0</a> license<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a class="pill" target="_blank" href="curate-share-data.html"> ⧉ Share data for reuse (Curate). </a></p>
+</div><div class="margin-aside">
+<p><a class="pill" target="_blank" href="consume-select-open-licenses.html"> ⧉ Select open licenses (Consume). </a></p>
+</div></div>
+</section>
+<section id="references" class="level1 unnumbered">
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Fiers2023" class="csl-entry" role="listitem">
+Fiers, Fien. 2023. <span>“Inequality and Discrimination in the Online Labor Market: A Scoping Review.”</span> <em>New Media &amp; Society</em> 25 (12): 3714–34. <a href="https://doi.org/10.1177/14614448221128379">https://doi.org/10.1177/14614448221128379</a>.
+</div>
+<div id="ref-HaddawayRethlefsenDaviesEtAl2022" class="csl-entry" role="listitem">
+Haddaway, Neal R., Melissa L. Rethlefsen, Melinda Davies, Julie Glanville, Bethany McGowan, Kate Nyhan, and Sarah Young. 2022. <span>“A Suggested Data Structure for Transparent and Repeatable Reporting of Bibliographic Searching.”</span> <em>Campbell Systematic Reviews</em> 18 (4): 1–12. <a href="https://doi.org/10.1002/CL2.1288">https://doi.org/10.1002/CL2.1288</a>.
+</div>
+<div id="ref-HigginsGreen2008" class="csl-entry" role="listitem">
+Higgins, Julian PT, and Sally Green. 2008. <em>Cochrane Handbook for Systematic Reviews of Interventions: Cochrane Book Series</em>. John Wiley &amp; Sons, Ltd., Chichester, UK.
+</div>
+<div id="ref-PageMcKenzieBossuytEtAl2021" class="csl-entry" role="listitem">
+Page, Matthew J., Joanne E. McKenzie, Patrick M. Bossuyt, Isabelle Boutron, Tammy C. Hoffmann, Cynthia D. Mulrow, Larissa Shamseer, et al. 2021. <span>“The PRISMA 2020 Statement: An Updated Guideline for Reporting Systematic Reviews.”</span> <em>Systematic Reviews</em> 10 (1). <a href="https://doi.org/10.1186/S13643-021-01626-4">https://doi.org/10.1186/S13643-021-01626-4</a>.
+</div>
+<div id="ref-SmithEtAl2011" class="csl-entry" role="listitem">
+Smith, Valerie, Declan Devane, Cecily M Begley, and Mike Clarke. 2011. <span>“Methodology in Conducting a Systematic Review of Systematic Reviews of Healthcare Interventions.”</span> <em>BMC Medical Research Methodology</em> 11 (1): 15. <a href="https://doi.org/10.1186/1471-2288-11-15">https://doi.org/10.1186/1471-2288-11-15</a>.
+</div>
+<div id="ref-Wagner2024" class="csl-entry" role="listitem">
+Wagner, Gerit. 2024. <span>“BibDedupe: An Open-Source Python Library for Bibliographic Record Deduplication.”</span> <em>Journal of Open Source Software</em> 9 (97): 6318. <a href="https://doi.org/10.21105/JOSS.06318">https://doi.org/10.21105/JOSS.06318</a>.
+</div>
+<div id="ref-WagnerPrester2025" class="csl-entry" role="listitem">
+Wagner, Gerit, and Julian Prester. 2025. <span>“CoLRev: An Open-Source Environment for Collaborative Reviews.”</span> <a href="https://github.com/CoLRev-Environment/colrev">https://github.com/CoLRev-Environment/colrev</a>.
+</div>
+<div id="ref-WagnerEtAl2026" class="csl-entry" role="listitem">
+Wagner, Gerit, Julian Prester, Roman Lukyanenko, and Guy Paré. 2026. <span>“Data Management in Literature Reviews: The C5-DM Framework.”</span> <em>Research Synthesis Methods (Under Review)</em>.
+</div>
+<div id="ref-WagnerPresterPare2021" class="csl-entry" role="listitem">
+Wagner, Gerit, Julian Prester, and Guy Paré. 2021. <span>“Exploring the Boundaries and Processes of Digital Platforms for Knowledge Work: A Review of Information Systems Research.”</span> <em>The Journal of Strategic Information Systems</em> 30 (4): 101694. <a href="https://doi.org/10.1016/j.jsis.2021.101694">https://doi.org/10.1016/j.jsis.2021.101694</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>For the illustration, we relied on open-access API-searches, because licensing issues do not allow for publication of raw data exported from databases like WOS or EBSCO.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Indexing in SYNERGY, SearchRXiv is planned once the review progresses beyond the <em>illustration</em> stages.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

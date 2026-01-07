@@ -11,5 +11,6 @@
     "comment": "",
     "search_parameters": {
         "query": "https://dblp.org/search/publ/api?q=microsourcing"
-    }
+    },
+    "label": "DBLP (API search)"
 }

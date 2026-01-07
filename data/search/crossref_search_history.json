@@ -11,5 +11,6 @@
     "comment": "",
     "search_parameters": {
         "url": "https://api.crossref.org/works?query.bibliographic=microsourcing"
-    }
+    },
+    "label": "Crossref (API search)"
 }

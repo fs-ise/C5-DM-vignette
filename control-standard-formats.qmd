@@ -1,0 +1,28 @@
+---
+title: "Use standard file formats (Control)"
+format: html
+execute:
+  freeze: auto
+---
+
+
+Use widely adopted, non-proprietary file formats to store and exchange review data, incluign meta-data, protocols, evidence tables, and outputs.
+
+**Why this matters**
+
+- **Tool independence and longevity:** Standard formats reduce lock-in and keep the evidence accessible across multiple tools, or even when individual tools evolve.
+- **Quality control and validation:** Human- and machine-readable formats support automated validation (schema checks, content validation) while enabling transparent human oversight (e.g., through readable Git diffs).
+- **Reproducibility and traceability:** Clean text-based formats integrate well with version control, so changes can be reviewed and compared efficiently.
+
+**Practical implementation**
+
+- Use **BibTeX (`.bib`)** for bibliographic metadata and record-level information.
+- Use **YAML (`.yml` / `.yaml`)** or **JSON (`.json`)** for structured artifacts such as search strategies and extracted evidence, with a preference for YAML due to its readability in version-controlled workflows.
+- Prefer plain-text formats that support **stable diffs** in Git, so even small changes remain visible and reviewable.
+- Document expected fields and conventions (e.g., required BibTeX keys; JSON schemas for search strategies) to ensure consistency across contributors.
+
+
+**Resources**
+
+- [The Turing Way: Research Data Management](https://book.the-turing-way.org/reproducible-research/rdm/rdm-data/)
+- [The Carpentries: Managing Data](https://carpentries-incubator.github.io/managing-computational-projects/25_RDM.html)

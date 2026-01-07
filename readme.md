@@ -1,11 +1,16 @@
-# Lrdm-vignette-data: A literature review protocol
+# Online labor markets and worker selection: A systematic review (vignette)
 
-This repository is based on the [ColRev](https://github.com/CoLRev-Environment/colrev) standard.
+The vignette is available at []().
 
+Build locally
+
+```sh
+cenv
+rm -R _manuscript/ && rm -R _freeze/ && quarto render && quarto render *.qmd --to html && mv *_files _manuscript/ && mv -- *.html _manuscript/ && cp -r figures _manuscript/
 ```
-# To work on this project, run
-colrev clone URL
 
-# Or to use it as a source in another project, run
-colrev search -a colrev.colrev_project:"url=URL"
+Publish to GitHub pages:
+
+```sh
+quarto publish
 ```

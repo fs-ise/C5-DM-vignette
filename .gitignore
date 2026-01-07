@@ -14,3 +14,8 @@ data/.tei/
 data/prep_man/records_prep_man.bib
 data/data/sample_references.bib
 .DS_Store
+
+/.quarto/
+**/*.quarto_ipynb
+_manuscript
+_freeze

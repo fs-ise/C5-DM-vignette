@@ -9,7 +9,7 @@ format:
     css: styles.css
 ---
 
-Building on the C5-DM framework for data management in literature reviews [@WagnerEtAl2026], this vignette illustrates how data management principles can be implemented in an literature review.
+Building on the C5-DM framework for data management in literature reviews [@WagnerEtAl2026], this vignette illustrates how data management principles can be implemented in a literature review.
 The framework foregrounds data conceptualization, collection, curation, control, and consumption as foundational activities that shape the transparency, reliability, and reuse of literature review outcomes.
 The vignette is organized into two complementary parts.
 The middle column presents a systematic literature review following established reporting conventions.
@@ -18,7 +18,7 @@ The vignette thus serves as a concrete illustration of good data management prac
 
 ::: aside
 ::: {.callout-note title="5C-DM Framework"}
-This column explains how the data management prinicples are implemented. ⬇️
+This column explains how the data management principles are implemented. ⬇️
 
 <!-- Click on the buttons for an explanation. -->
 :::
@@ -29,7 +29,7 @@ This column explains how the data management prinicples are implemented. ⬇️
 This review focuses on worker selection decisions in online labor markets.
 In line with qualitative systematic reviews [@HigginsGreen2008;@SmithEtAl2011], it aims at collecting evidence from prior empirical studies and aggregating it.
 
-The review is conducted using a [shared GitHub repository](https://github.com/fs-ise/C5-DM-vignette){target=_blank}, which was be synchronized locally by the team.
+The review is conducted using a [shared GitHub repository](https://github.com/fs-ise/C5-DM-vignette){target=_blank}, which was synchronized locally by the team.
 
 ::: aside
 <a class="pill" target="_blank"
@@ -118,13 +118,6 @@ The search strategies are stored in JSON format together with the raw data files
 
 ::: aside
 <a class="pill" target="_blank"
-   href="collect-search-strategy-design.html">
-  ⧉ Design effective search strategies (Collect).
-</a>
-:::
-
-::: aside
-<a class="pill" target="_blank"
    href="collect-transparency-coverage.html">
   ⧉ Report database coverage (Collect).
 </a>
@@ -135,14 +128,8 @@ The search strategies are stored in JSON format together with the raw data files
 Metadata was prepared using CoLRev and extensions [@WagnerPrester2025].
 <!--
 Preparation changes are in the [prep commits](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+prep&type=commits){target=_blank}.
- or link to individual commit? https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c -->
+ or link to individual commit? https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c 
 
-::: aside
-<a class="pill" target="_blank"
-   href="collect-prepare.html">
-  ⧉ Prepare (meta)data (Collect).
-</a>
-:::
 
 ::: {.callout-note title="Manually supervised task — Import and prepare metadata" collapse=true}
 **Trigger:** Records with `colrev_status = {md_retrieved}` in [data/records.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib)   
@@ -168,7 +155,7 @@ colrev prep-man
 **Validation:** Run `colrev validate` after committing changes.  
 **History filters:** [load](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+load&type=commits) · [prep](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+prep&type=commits) · [prep-man](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+prep-man&type=commits)
 :::
-
+-->
 Deduplication was done using BibDedupe [@Wagner2024].
 <!--
 Deduplication changes are in the [dedupe commits](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+dedupe&type=commits){target=_blank}.
@@ -188,6 +175,13 @@ colrev dedupe
 **History filter:** [dedupe](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+dedupe&type=commits)
 :::
 
+::: aside
+<a class="pill" target="_blank"
+   href="collect-prepare.html">
+  ⧉ Prepare (meta)data (Collect).
+</a>
+:::
+
 <!--
 Dedupe changes were validated using the max-diff strategy (`colrev validate XXXX`).
 Preparation changes were validated using the max-diff strategy (`colrev validate XXXX`).
@@ -195,7 +189,8 @@ Preparation changes were validated using the max-diff strategy (`colrev validate
 
 ## Prescreen
 
-For prescreening, we tested the new [llm-prescreener](temp_file.txt){target=_blank}.
+For prescreening, we tested a new *LLM-based prescreened*.
+<!-- [llm-prescreener](temp_file.txt){target=_blank} -->
 Comparison with prescreening decisions of GW showed low reliability with the llm-prescreener.
 Results were therefore reverted and a fully manual prescreen was implemented.
 
@@ -219,13 +214,6 @@ TODO:
 **Protocol:** screening procedures and criteria (see `protocol/screening.md`)  
 **Output:** `records_screened.bib`  
 **History filter:** [prescreen](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+prescreen&type=commits&p=1)
-:::
-
-::: aside
-<a class="pill" target="_blank"
-   href="consume-avoid-ineffective-automation.html">
-  ⧉ Avoid ineffective automation (Consume).
-</a>
 :::
 
 For full-text screening, PDF documents were retrieved and prepared.

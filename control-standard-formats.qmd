@@ -6,7 +6,7 @@ execute:
 ---
 
 
-Use widely adopted, non-proprietary file formats to store and exchange review data, incluign meta-data, protocols, evidence tables, and outputs.
+Use widely adopted, non-proprietary file formats to store and exchange review data, including meta-data, protocols, evidence tables, and outputs.
 
 **Why this matters**
 

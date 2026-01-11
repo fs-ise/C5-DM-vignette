@@ -17,7 +17,7 @@ Reuse well-documented datasets, search strategies, and screening/extraction deci
 **Practical implementation**
 
 - Assess fit before reuse (scope, timeframe, databases, inclusion criteria) and document what is reused *as-is* vs. adapted.
-- Reuse and adapt **search strategies** and publish them to **SearchRXiv** (search queries), so others can discover, cite, and build on them.
+- Reuse and adapt **search strategies** and publish them to **searchRXiv** (search queries), so others can discover, cite, and build on them.
 - Reuse **screening decision datasets** (included/excluded decisions) from **SYNERGY datasets** to calibrate screening and support transparent decision lineage.
 - Import prior **seed sets** (key papers) to validate recall and align interpretation of inclusion criteria.
 - **Contact prior authors/review teams** to request reusable samples (e.g., screening decisions, extraction sheets, codebooks) when they are not publicly available.

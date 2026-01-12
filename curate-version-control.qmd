@@ -1,5 +1,5 @@
 ---
-title: "Version-control data (Curate)"
+title: "Rely on a version-controlled repository to organize and trace review data (Curate)"
 format: html
 execute:
   freeze: auto

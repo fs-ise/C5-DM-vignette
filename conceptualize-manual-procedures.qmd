@@ -1,0 +1,54 @@
+---
+title: "Treat manual data work as primary analytical procedures by documenting parameters and tracing changes (Conceptualize)"
+format: html
+execute:
+  freeze: auto
+---
+
+**Why it matters**
+
+In literature reviews, some of the most consequential analytical decisions are not made by algorithms but by people.
+Screening, deduplication, metadata correction, data extraction, and synthesis are typically carried out through manual or semi-automated work. These activities determine what enters the review corpus, how evidence is represented, and what patterns can be observed.
+
+Yet in many projects, these steps are treated as informal background activity: decisions are made in spreadsheets, emails, or conversations, and only the final dataset is preserved. This practice hides the work that actually produced the data.
+
+To make reviews transparent, reproducible, and trustworthy, manual data work must be treated as a first-class analytical procedure—documented, versioned, and traceable in the same way as computational workflows.
+
+**Practical implementation**
+
+Every manual or semi-manual task that modifies review data should be specified as an explicit procedure.  
+For each task, the review team should define:
+
+- **Trigger** — When is this task performed?
+- **Responsible** — Who is responsible for the task?
+- **Protocol** — What rules, criteria, or instructions guide the task?
+- **Process** — What exactly is done, with which tools and commands?
+- **Outputs** — What fields, files, or statuses are changed?
+- **Validation** — How are errors, disagreements, or inconsistencies handled?
+
+These definitions turn human activity into an inspectable part of the analytical pipeline rather than an opaque side channel.
+
+The following illustrates how a manual task can be defined and executed as part of a traceable review workflow.
+
+::: {.callout-note title="Manual task — Deduplicate records" collapse=true}
+**Trigger:** New or updated records added to `data/records.bib`  
+**Responsible:** Review coordinator (or designated data steward)  
+**Protocol:** Deduplication rules and matching thresholds (see `protocol/deduplication.md`)  
+
+**Process:**
+
+- Run automated similarity matching to identify candidate duplicate clusters.
+- Manually inspect each cluster to determine which records refer to the same publication.
+- Merge metadata from redundant records into the canonical record (e.g., missing fields, identifiers).
+- Combine all provenance information by appending their `origin` entries to the canonical record.
+- Remove redundant records from the primary data.
+
+**Output (in `data/records.bib`):**
+
+- One canonical record per publication, containing:
+  - the merged metadata
+  - a combined `origin` field documenting all source records
+  - `colrev_status = {md_processed}` once the merge is complete
+
+**History filter:** commits containing `deduplicate`
+:::

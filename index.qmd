@@ -34,7 +34,7 @@ The review is conducted using a [shared GitHub repository](https://github.com/fs
 ::: aside
 <a class="pill" target="_blank"
    href="curate-version-control.html">
-  ⧉ Version-control data (Curate).
+  ⧉ Rely on a version-controlled repository to organize and trace review data (Curate).
 </a>
 :::
 
@@ -47,21 +47,21 @@ The resulting query formulations were systematically tabulated to document the c
 ::: aside
 <a class="pill" target="_blank"
    href="control-standard-formats.html">
-  ⧉ Use standard file formats (Control). 
+  ⧉ Select standard file formats to facilitate access and contribution by humans and software (Control). 
 </a>
 :::
 
 ::: aside
 <a class="pill" target="_blank"
    href="conceptualize-raw-primary.html">
-  ⧉ Link raw and primary records (Conceptualize).
+  ⧉ Store search results separately from the primary data, using identifiers as links (Conceptualize).
 </a>
 :::
 
 ::: aside
 <a class="pill" target="_blank"
    href="consume-reuse-prior-review.html">
-  ⧉ Reuse prior review data (Consume).
+  ⧉ Reuse data from prior literature review papers and curated repositories (Consume).
 </a>
 :::
 
@@ -119,7 +119,7 @@ The search strategies are stored in JSON format together with the raw data files
 ::: aside
 <a class="pill" target="_blank"
    href="collect-transparency-coverage.html">
-  ⧉ Report database coverage (Collect).
+  ⧉ Document database coverage, especially when using LLM-based tools (Collect).
 </a>
 :::
 
@@ -178,7 +178,7 @@ colrev dedupe
 ::: aside
 <a class="pill" target="_blank"
    href="collect-prepare.html">
-  ⧉ Prepare (meta)data (Collect).
+  ⧉ Set up data preparation procedures to ensure high-quality and machine-readable data (Collect).
 </a>
 :::
 
@@ -204,7 +204,7 @@ TODO:
 ::: aside
 <a class="pill" target="_blank"
    href="control-evaluate-changes.html">
-  ⧉ Evaluate changes (Control).
+  ⧉ Assess all manual and computational changes and roll back unreliable contributions (Control).
 </a>
 :::
 
@@ -247,6 +247,7 @@ colrev pdf-prep-man
 **History filters:** [pdf-get](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+pdf-get&type=commits) · [pdf-get-man](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+pdf-get-man&type=commits) · [pdf-prep](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+pdf-prep&type=commits) · [pdf-prep-man](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+pdf-prep-man&type=commits)
 :::
 
+
 Records were screened independently, as described in the following.
 
 ::: {.callout-note title="Manual task — Screen full texts" collapse=true}
@@ -268,6 +269,13 @@ Records were screened independently, as described in the following.
 **History filter:** [screen](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+screen&type=commits)
 :::
 
+::: aside
+<a class="pill" target="_blank"
+   href="conceptualize-manual-procedures.html">
+  ⧉ Treat manual data work as primary analytical procedures by documenting parameters and tracing changes (Conceptualize).
+</a>
+:::
+
 <!-- Screen: fulltext documents were shared in a protected drive (link to Dropbox) -->
 
 ## Data extraction
@@ -285,7 +293,7 @@ In line with the methodology of systematic reviews [@HigginsGreen2008;@SmithEtAl
 ::: aside
 <a class="pill" target="_blank"
    href="curate-align-data-with-methods.html">
-  ⧉ Align data with methods (Curate).
+  ⧉ Align data structures with the specific review type (Curate).
 </a>
 :::
 
@@ -294,6 +302,13 @@ In line with the methodology of systematic reviews [@HigginsGreen2008;@SmithEtAl
 
 The narrative synthesis is in the [paper document](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/data/paper.md){target=_blank} in Markdown format, allowing for larger teams to work on the same document (similar to the [covid19-review](https://github.com/greenelab/covid19-review)).
 The current status of the project is automatically updated with every change and reflected in the PRISMA chart (@fig-prisma, in line with the recommendations of @PageMcKenzieBossuytEtAl2021).
+
+::: aside
+<a class="pill" target="_blank"
+   href="control-non-redundancy.html">
+  ⧉ Adopt non-redundant data structures, supported by identifiers and automated validation procedures (Control).
+</a>
+:::
 
 ```{python}
 #| label: fig-prisma
@@ -392,15 +407,8 @@ To make the review reusable, the data was published on GitHub under the [CC BY 4
 
 ::: aside
 <a class="pill" target="_blank"
-   href="curate-share-data.html">
-  ⧉ Share data for reuse (Curate).
-</a>
-:::
-
-::: aside
-<a class="pill" target="_blank"
    href="consume-select-open-licenses.html">
-  ⧉ Select open licenses (Consume).
+  ⧉ Share review data via open data platforms and use open licenses to enable reuse (Consume).
 </a>
 :::
 

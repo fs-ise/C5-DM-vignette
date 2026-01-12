@@ -1,5 +1,5 @@
 ---
-title: "Align data with method (Curate)"
+title: "Align data structures with the specific review type (Curate)"
 format: html
 bibliography: references.bib
 nocite: |

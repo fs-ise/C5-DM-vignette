@@ -1,25 +1,29 @@
 ---
-title: "Select open licenses (Consume)"
+title: "Share review data via open data platforms and use open licenses to enable reuse (Consume)"
 format: html
 execute:
   freeze: auto
 ---
 
-Select an explicit open license for review outputs (data, code, and documentation) to enable lawful reuse and to make reuse expectations unambiguous.
+Publish the review’s curated dataset (metadata, screening decisions, extraction forms, and evidence tables) so others can inspect, reuse, and extend the evidence base.
+Select an explicit open license for review outputs to enable reuse and to make reuse expectations unambiguous.
 
 **Why this matters**
 
+- **Transparency and credibility:** Shared data allows readers to verify how conclusions follow from the underlying evidence.
+- **Cumulative research:** Reusable datasets reduce duplicated effort and enable incremental updates, replications, and new syntheses.
+- **Method learning and benchmarking:** Open artifacts support training, tool comparison, and community improvement of review workflows.
 - **Reusable by default:** Without a license, others often cannot legally reuse or adapt the materials—even if they are publicly accessible.
 - **Clear downstream rights:** Open licenses enable cumulative research (reuse, update) and reduce friction for collaborators and adopters.
-- **Compatibility and compliance:** Licensing choices determine whether artifacts can be combined with other open datasets, tools, and repositories.
 
 **Practical implementation**
 
+- Publish data in a **public open data repository** with clear structure (raw inputs, primary records, protocols, derived outputs) and version history.
+- Include **documentation**: README, data dictionary (schemata), and a short description of how to reproduce key outputs.
+- Share reuse-critical artifacts explicitly (e.g., `records.bib`, screening decisions, extraction templates, evidence tables) while respecting licensing and access constraints.
+- Check third-party constraints (publishers, database terms, copyrighted PDFs) and license only what you have the right to share.
 - Choose a license that matches the artifact type:
-
   - **Data (evidence tables, screening decisions):** e.g., **CC BY 4.0** (attribution required) or **CC0** (public-domain dedication) when appropriate.
   - **Code (scripts, pipelines):** a standard OSI-approved software license (e.g., **MIT**, **Apache-2.0**).
   - **Text (protocols, documentation):** an open content license (often **CC BY 4.0**).
-
-- Document the license in the repository root (e.g., `LICENSE`/`LICENSE.txt`) and state how to cite the dataset.
-- Check third-party constraints (publishers, database terms, copyrighted PDFs) and license only what you have the right to share.
+- Document the license in the repository root (in a `LICENSE` file) and state how to cite the dataset.

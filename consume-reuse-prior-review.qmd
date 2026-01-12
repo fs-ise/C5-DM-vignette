@@ -1,5 +1,5 @@
 ---
-title: "Reuse prior review data (Consume)"
+title: "Reuse data from prior literature review papers and curated repositories (Consume)"
 format: html
 execute:
   freeze: auto

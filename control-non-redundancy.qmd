@@ -1,0 +1,8 @@
+---
+title: "Adopt non-redundant data structures, supported by identifiers and automated validation procedures (Control)"
+format: html
+execute:
+  freeze: auto
+---
+
+TODO

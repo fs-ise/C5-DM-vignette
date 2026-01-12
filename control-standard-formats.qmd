@@ -1,5 +1,5 @@
 ---
-title: "Use standard file formats (Control)"
+title: "Select standard file formats to facilitate access and contribution by humans and software (Control)"
 format: html
 execute:
   freeze: auto

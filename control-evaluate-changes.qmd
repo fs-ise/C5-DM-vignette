@@ -1,5 +1,5 @@
 ---
-title: "Evaluate changes (Control)"
+title: "Assess all manual and computational changes and roll back unreliable contributions (Control)"
 format: html
 execute:
   freeze: auto

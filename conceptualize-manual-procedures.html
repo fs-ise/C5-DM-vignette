@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Select standard file formats to facilitate access and contribution by humans and software (Control)</title>
+<title>Treat manual data work as primary analytical procedures by documenting parameters and tracing changes (Conceptualize)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,18 +23,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="control-standard-formats_files/libs/clipboard/clipboard.min.js"></script>
-<script src="control-standard-formats_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="control-standard-formats_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="control-standard-formats_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="control-standard-formats_files/libs/quarto-html/popper.min.js"></script>
-<script src="control-standard-formats_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="control-standard-formats_files/libs/quarto-html/anchor.min.js"></script>
-<link href="control-standard-formats_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="control-standard-formats_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="control-standard-formats_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="control-standard-formats_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="control-standard-formats_files/libs/bootstrap/bootstrap-0595c3adc79cf3968d79df64b99d9203.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="conceptualize-manual-procedures_files/libs/clipboard/clipboard.min.js"></script>
+<script src="conceptualize-manual-procedures_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="conceptualize-manual-procedures_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="conceptualize-manual-procedures_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="conceptualize-manual-procedures_files/libs/quarto-html/popper.min.js"></script>
+<script src="conceptualize-manual-procedures_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="conceptualize-manual-procedures_files/libs/quarto-html/anchor.min.js"></script>
+<link href="conceptualize-manual-procedures_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="conceptualize-manual-procedures_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="conceptualize-manual-procedures_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="conceptualize-manual-procedures_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="conceptualize-manual-procedures_files/libs/bootstrap/bootstrap-0595c3adc79cf3968d79df64b99d9203.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Select standard file formats to facilitate access and contribution by humans and software (Control)</h1>
+<h1 class="title">Treat manual data work as primary analytical procedures by documenting parameters and tracing changes (Conceptualize)</h1>
 </div>
 
 
@@ -64,25 +64,59 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Use widely adopted, non-proprietary file formats to store and exchange review data, including meta-data, protocols, evidence tables, and outputs.</p>
-<p><strong>Why this matters</strong></p>
-<ul>
-<li><strong>Tool independence and longevity:</strong> Standard formats reduce lock-in and keep the evidence accessible across multiple tools, or even when individual tools evolve.</li>
-<li><strong>Quality control and validation:</strong> Human- and machine-readable formats support automated validation (schema checks, content validation) while enabling transparent human oversight (e.g., through readable Git diffs).</li>
-<li><strong>Reproducibility and traceability:</strong> Clean text-based formats integrate well with version control, so changes can be reviewed and compared efficiently.</li>
-</ul>
+<p><strong>Why it matters</strong></p>
+<p>In literature reviews, some of the most consequential analytical decisions are not made by algorithms but by people. Screening, deduplication, metadata correction, data extraction, and synthesis are typically carried out through manual or semi-automated work. These activities determine what enters the review corpus, how evidence is represented, and what patterns can be observed.</p>
+<p>Yet in many projects, these steps are treated as informal background activity: decisions are made in spreadsheets, emails, or conversations, and only the final dataset is preserved. This practice hides the work that actually produced the data.</p>
+<p>To make reviews transparent, reproducible, and trustworthy, manual data work must be treated as a first-class analytical procedure—documented, versioned, and traceable in the same way as computational workflows.</p>
 <p><strong>Practical implementation</strong></p>
+<p>Every manual or semi-manual task that modifies review data should be specified as an explicit procedure.<br>
+For each task, the review team should define:</p>
 <ul>
-<li>Use <strong>BibTeX (<code>.bib</code>)</strong> for bibliographic metadata and record-level information.</li>
-<li>Use <strong>YAML (<code>.yml</code> / <code>.yaml</code>)</strong> or <strong>JSON (<code>.json</code>)</strong> for structured artifacts such as search strategies and extracted evidence, with a preference for YAML due to its readability in version-controlled workflows.</li>
-<li>Prefer plain-text formats that support <strong>stable diffs</strong> in Git, so even small changes remain visible and reviewable.</li>
-<li>Document expected fields and conventions (e.g., required BibTeX keys; JSON schemas for search strategies) to ensure consistency across contributors.</li>
+<li><strong>Trigger</strong> — When is this task performed?</li>
+<li><strong>Responsible</strong> — Who is responsible for the task?</li>
+<li><strong>Protocol</strong> — What rules, criteria, or instructions guide the task?</li>
+<li><strong>Process</strong> — What exactly is done, with which tools and commands?</li>
+<li><strong>Outputs</strong> — What fields, files, or statuses are changed?</li>
+<li><strong>Validation</strong> — How are errors, disagreements, or inconsistencies handled?</li>
 </ul>
-<p><strong>Resources</strong></p>
+<p>These definitions turn human activity into an inspectable part of the analytical pipeline rather than an opaque side channel.</p>
+<p>The following illustrates how a manual task can be defined and executed as part of a traceable review workflow.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Manual task — Deduplicate records">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Manual task — Deduplicate records
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Trigger:</strong> New or updated records added to <code>data/records.bib</code><br>
+<strong>Responsible:</strong> Review coordinator (or designated data steward)<br>
+<strong>Protocol:</strong> Deduplication rules and matching thresholds (see <code>protocol/deduplication.md</code>)</p>
+<p><strong>Process:</strong></p>
 <ul>
-<li><a href="https://book.the-turing-way.org/reproducible-research/rdm/rdm-data/">The Turing Way: Research Data Management</a></li>
-<li><a href="https://carpentries-incubator.github.io/managing-computational-projects/25_RDM.html">The Carpentries: Managing Data</a></li>
+<li>Run automated similarity matching to identify candidate duplicate clusters.</li>
+<li>Manually inspect each cluster to determine which records refer to the same publication.</li>
+<li>Merge metadata from redundant records into the canonical record (e.g., missing fields, identifiers).</li>
+<li>Combine all provenance information by appending their <code>origin</code> entries to the canonical record.</li>
+<li>Remove redundant records from the primary data.</li>
 </ul>
+<p><strong>Output (in <code>data/records.bib</code>):</strong></p>
+<ul>
+<li>One canonical record per publication, containing:
+<ul>
+<li>the merged metadata</li>
+<li>a combined <code>origin</code> field documenting all source records</li>
+<li><code>colrev_status = {md_processed}</code> once the merge is complete</li>
+</ul></li>
+</ul>
+<p><strong>History filter:</strong> commits containing <code>deduplicate</code></p>
+</div>
+</div>
+</div>
 
 </main>
 <!-- /main column -->

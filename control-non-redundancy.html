@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Share data for reuse (Curate)</title>
+<title>Adopt non-redundant data structures, supported by identifiers and automated validation procedures (Control)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,21 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="curate-share-data_files/libs/clipboard/clipboard.min.js"></script>
-<script src="curate-share-data_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="curate-share-data_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="curate-share-data_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="curate-share-data_files/libs/quarto-html/popper.min.js"></script>
-<script src="curate-share-data_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="curate-share-data_files/libs/quarto-html/anchor.min.js"></script>
-<link href="curate-share-data_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="curate-share-data_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="curate-share-data_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="curate-share-data_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="curate-share-data_files/libs/bootstrap/bootstrap-0595c3adc79cf3968d79df64b99d9203.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="control-non-redundancy_files/libs/clipboard/clipboard.min.js"></script>
+<script src="control-non-redundancy_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="control-non-redundancy_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="control-non-redundancy_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="control-non-redundancy_files/libs/quarto-html/popper.min.js"></script>
+<script src="control-non-redundancy_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="control-non-redundancy_files/libs/quarto-html/anchor.min.js"></script>
+<link href="control-non-redundancy_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="control-non-redundancy_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="control-non-redundancy_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="control-non-redundancy_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="control-non-redundancy_files/libs/bootstrap/bootstrap-0595c3adc79cf3968d79df64b99d9203.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -47,7 +67,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Share data for reuse (Curate)</h1>
+<h1 class="title">Adopt non-redundant data structures, supported by identifiers and automated validation procedures (Control)</h1>
 </div>
 
 
@@ -64,22 +84,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Publish the review’s curated dataset (metadata, screening decisions, extraction forms, and synthesis-ready evidence tables) so others can inspect, reuse, and extend the evidence base.</p>
-<p><strong>Why this matters</strong></p>
-<ul>
-<li><strong>Transparency and credibility:</strong> Shared data allows readers to verify how conclusions follow from the underlying evidence.</li>
-<li><strong>Cumulative research:</strong> Reusable datasets reduce duplicated effort and enable incremental updates, replications, and new syntheses.</li>
-<li><strong>Method learning and benchmarking:</strong> Open artifacts support training, tool comparison, and community improvement of review workflows.</li>
-</ul>
+<p><strong>Why it matters</strong></p>
+<p>A core principle of robust data management is to minimize redundant storage of information to keep datasets internally consistent <span class="citation" data-cites="Codd1974">(<a href="#ref-Codd1974" role="doc-biblioref">Codd 1974</a>)</span>. In literature reviews, this principle is often violated: the same entity (a paper, a decision, a status) is represented multiple times across files, tables, or derived artifacts. Once redundancy enters the workflow, contradictions become easy to create and hard to detect.</p>
+<p>This is particularly problematic when status information or inclusion/exclusion decisions are stored redundantly (for example, in multiple tables or repeated across representations of the same paper). Contradictory values can accumulate silently—e.g., the same paper appears “included” in one place and “excluded” in another—because there is no single source of truth.</p>
 <p><strong>Practical implementation</strong></p>
+<p>Use non-redundant data structures: Represent each entity type once and link entities through identifiers:</p>
 <ul>
-<li>Publish data in a <strong>public repository</strong> with clear structure (raw inputs, primary records, protocols, derived outputs) and version history.</li>
-<li>Include <strong>documentation</strong>: README, data dictionary (schemata), and a short description of how to reproduce key outputs.</li>
-<li>Provide <strong>persistent references</strong> where possible (release tags / archived snapshots) and recommended citation information.</li>
-<li>Share reuse-critical artifacts explicitly (e.g., <code>records.bib</code>, screening decisions, extraction templates, evidence tables) while respecting licensing and access constraints.</li>
+<li><strong>Paper-level entity:</strong> one canonical record per paper, keyed by stable identifiers (e.g., DOI, PMID, ISBN) and/or a repository-internal ID.</li>
+<li><strong>Decision-level entity:</strong> screening/extraction/synthesis decisions stored once (as fields or separate linked tables), not duplicated across multiple exports.</li>
+<li><strong>Derived artifacts:</strong> aggregated outputs (counts, profiles, PRISMA diagrams, dashboards) are <em>generated</em> from primary data rather than stored as editable, redundant files.</li>
+</ul>
+<p>This makes “what the dataset says” unambiguous: there is one authoritative place to read and update each piece of information.</p>
+<p>Rely on identifiers, not repeated values: Non-redundant structures work best when every record can be referenced reliably:</p>
+<ul>
+<li>Prefer <strong>globally meaningful identifiers</strong> (DOI/PMID) when available.</li>
+<li>Maintain <strong>stable internal IDs</strong> when external identifiers are missing.</li>
+<li>Track provenance through an <strong>origin</strong> field rather than duplicating records.</li>
 </ul>
 
-</main>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Codd1974" class="csl-entry" role="listitem">
+Codd, Edgar F. 1974. <em>Recent Investigations in Relational Data Base Systems</em>. IBM Thomas J. Watson Research Division.
+</div>
+</div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

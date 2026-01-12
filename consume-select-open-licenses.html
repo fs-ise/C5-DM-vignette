@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Select open licenses (Consume)</title>
+<title>Share review data via open data platforms and use open licenses to enable reuse (Consume)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Select open licenses (Consume)</h1>
+<h1 class="title">Share review data via open data platforms and use open licenses to enable reuse (Consume)</h1>
 </div>
 
 
@@ -64,23 +64,28 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Select an explicit open license for review outputs (data, code, and documentation) to enable lawful reuse and to make reuse expectations unambiguous.</p>
+<p>Publish the review’s curated dataset (metadata, screening decisions, extraction forms, and evidence tables) so others can inspect, reuse, and extend the evidence base. Select an explicit open license for review outputs to enable reuse and to make reuse expectations unambiguous.</p>
 <p><strong>Why this matters</strong></p>
 <ul>
+<li><strong>Transparency and credibility:</strong> Shared data allows readers to verify how conclusions follow from the underlying evidence.</li>
+<li><strong>Cumulative research:</strong> Reusable datasets reduce duplicated effort and enable incremental updates, replications, and new syntheses.</li>
+<li><strong>Method learning and benchmarking:</strong> Open artifacts support training, tool comparison, and community improvement of review workflows.</li>
 <li><strong>Reusable by default:</strong> Without a license, others often cannot legally reuse or adapt the materials—even if they are publicly accessible.</li>
 <li><strong>Clear downstream rights:</strong> Open licenses enable cumulative research (reuse, update) and reduce friction for collaborators and adopters.</li>
-<li><strong>Compatibility and compliance:</strong> Licensing choices determine whether artifacts can be combined with other open datasets, tools, and repositories.</li>
 </ul>
 <p><strong>Practical implementation</strong></p>
 <ul>
-<li><p>Choose a license that matches the artifact type:</p>
+<li>Publish data in a <strong>public open data repository</strong> with clear structure (raw inputs, primary records, protocols, derived outputs) and version history.</li>
+<li>Include <strong>documentation</strong>: README, data dictionary (schemata), and a short description of how to reproduce key outputs.</li>
+<li>Share reuse-critical artifacts explicitly (e.g., <code>records.bib</code>, screening decisions, extraction templates, evidence tables) while respecting licensing and access constraints.</li>
+<li>Check third-party constraints (publishers, database terms, copyrighted PDFs) and license only what you have the right to share.</li>
+<li>Choose a license that matches the artifact type:
 <ul>
 <li><strong>Data (evidence tables, screening decisions):</strong> e.g., <strong>CC BY 4.0</strong> (attribution required) or <strong>CC0</strong> (public-domain dedication) when appropriate.</li>
 <li><strong>Code (scripts, pipelines):</strong> a standard OSI-approved software license (e.g., <strong>MIT</strong>, <strong>Apache-2.0</strong>).</li>
 <li><strong>Text (protocols, documentation):</strong> an open content license (often <strong>CC BY 4.0</strong>).</li>
 </ul></li>
-<li><p>Document the license in the repository root (e.g., <code>LICENSE</code>/<code>LICENSE.txt</code>) and state how to cite the dataset.</p></li>
-<li><p>Check third-party constraints (publishers, database terms, copyrighted PDFs) and license only what you have the right to share.</p></li>
+<li>Document the license in the repository root (in a <code>LICENSE</code> file) and state how to cite the dataset.</li>
 </ul>
 
 </main>

@@ -1,8 +1,6 @@
 ---
 title: "Assess all manual and computational changes and roll back unreliable contributions (Control)"
 format: html
-execute:
-  freeze: auto
 ---
 
 Evaluate and validate changes to the evidence base—especially when they are introduced by automation, bulk edits, or new contributors—before they become part of the dataset.

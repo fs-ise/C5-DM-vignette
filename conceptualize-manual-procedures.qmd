@@ -1,8 +1,6 @@
 ---
 title: "Treat manual data work as primary analytical procedures by documenting parameters and tracing changes (Conceptualize)"
 format: html
-execute:
-  freeze: auto
 ---
 
 **Why it matters**
@@ -30,7 +28,7 @@ These definitions turn human activity into an inspectable part of the analytical
 
 The following illustrates how a manual task can be defined and executed as part of a traceable review workflow.
 
-::: {.callout-note title="Manual task — Deduplicate records" collapse=true}
+::: {.callout-note title="Manual task — Deduplicate records"}
 **Trigger:** New or updated records added to `data/records.bib`  
 **Responsible:** Review coordinator (or designated data steward)  
 **Protocol:** Deduplication rules and matching thresholds (see `protocol/deduplication.md`)  

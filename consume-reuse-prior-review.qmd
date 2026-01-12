@@ -1,8 +1,6 @@
 ---
 title: "Reuse data from prior literature review papers and curated repositories (Consume)"
 format: html
-execute:
-  freeze: auto
 ---
 
 Reuse well-documented datasets, search strategies, and screening/extraction decisions from prior reviews when they fit the current review’s scope.

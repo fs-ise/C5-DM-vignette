@@ -1,8 +1,6 @@
 ---
 title: "Share review data via open data platforms and use open licenses to enable reuse (Consume)"
 format: html
-execute:
-  freeze: auto
 ---
 
 Publish the review’s curated dataset (metadata, screening decisions, extraction forms, and evidence tables) so others can inspect, reuse, and extend the evidence base.

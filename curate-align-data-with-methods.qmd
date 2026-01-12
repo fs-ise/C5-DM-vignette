@@ -4,8 +4,7 @@ format: html
 bibliography: references.bib
 nocite: |
   @Wang2022
-execute:
-  freeze: auto
+
 ---
 
 Select data structures and representations that fit the *type of review* and the *intended analytical method*.

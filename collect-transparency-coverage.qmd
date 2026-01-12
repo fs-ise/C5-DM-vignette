@@ -1,8 +1,6 @@
 ---
 title: "Document database coverage, especially when using LLM-based tools (Collect)"
 format: html
-execute:
-  freeze: auto
 ---
 
 Report which databases, APIs, and indexes were searched—and what parts of the literature they do and do not cover.

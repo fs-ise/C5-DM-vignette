@@ -1,8 +1,6 @@
 ---
 title: "Store search results separately from the primary data, using identifiers as links (Conceptualize)"
 format: html
-execute:
-  freeze: auto
 ---
 
 <!--

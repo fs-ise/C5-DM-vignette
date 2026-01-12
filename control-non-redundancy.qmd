@@ -1,8 +1,29 @@
 ---
 title: "Adopt non-redundant data structures, supported by identifiers and automated validation procedures (Control)"
 format: html
-execute:
-  freeze: auto
+bibliography: references.bib
 ---
 
-TODO
+**Why it matters**
+
+A core principle of robust data management is to minimize redundant storage of information to keep datasets internally consistent [@Codd1974].
+In literature reviews, this principle is often violated: the same entity (a paper, a decision, a status) is represented multiple times across files, tables, or derived artifacts.
+Once redundancy enters the workflow, contradictions become easy to create and hard to detect.
+
+This is particularly problematic when status information or inclusion/exclusion decisions are stored redundantly (for example, in multiple tables or repeated across representations of the same paper).
+Contradictory values can accumulate silently—e.g., the same paper appears “included” in one place and “excluded” in another—because there is no single source of truth.
+
+**Practical implementation**
+
+Use non-redundant data structures: Represent each entity type once and link entities through identifiers:
+
+- **Paper-level entity:** one canonical record per paper, keyed by stable identifiers (e.g., DOI, PMID, ISBN) and/or a repository-internal ID.
+- **Derived artifacts:** aggregated outputs (counts, profiles, PRISMA diagrams, dashboards) are *generated* from primary data rather than stored as editable, redundant files.
+
+This makes “what the dataset says” unambiguous: there is one authoritative place to read and update each piece of information.
+
+Rely on identifiers, not repeated values: Non-redundant structures work best when every record can be referenced reliably:
+
+- Prefer **globally meaningful identifiers** (DOI/PMID) when available.
+- Maintain **stable internal IDs** when external identifiers are missing.
+- Track provenance through an **origin** field rather than duplicating records.

@@ -1,8 +1,6 @@
 ---
 title: "Set up data preparation procedures to ensure high-quality and machine-readable data (Collect)"
 format: html
-execute:
-  freeze: auto
 ---
 
 Prepare bibliographic metadata and full-text data so they are complete, consistent, machine-readable, and reliably linked for downstream steps (dedupe, screening, extraction, synthesis).
